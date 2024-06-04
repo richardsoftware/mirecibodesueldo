@@ -4,6 +4,7 @@ function calcularSueldo() {
     const horas50 = parseFloat(document.getElementById('horas50').value);
     const horasFeriado = parseFloat(document.getElementById('horasFeriado').value);
     const horasNocturnas = parseFloat(document.getElementById('horasNocturnas').value);
+    const dias = 30;
 
     const sueldo = 356000.00;
     const adicionalRemunerativo = 123000.00;
@@ -17,20 +18,49 @@ function calcularSueldo() {
 
     const totalHaberesConAportes = sueldo + adicionalRemunerativo + adicionalAntiguedad + presentismo + hsExtras50 + hsExtras100 + adNocturnidad;
     const totalHaberesSinAportes = sumaNoRemunerativa + viaticos;
-    //const totalDeduccionesNuevo = (jubilacion+ley+sindicato+personal+obrasocial+redondeo); // Prueba
 
-
-    const jubilacion = (totalHaberesConAportes * 0.11).toFixed(2)
-    const ley = (totalHaberesConAportes * 0.03).toFixed(2);
+    const jubilacion = (totalHaberesConAportes * 0.11);
+    const ley = (totalHaberesConAportes * 0.03);
     const sindicato = 0;
     const personal = 66.52;
-    const obrasocial = ((totalHaberesConAportes+sumaNoRemunerativa)* 0.03).toFixed(2);
+    const obrasocial = ((totalHaberesConAportes+sumaNoRemunerativa)* 0.03);
     const redondeo = -0.05;
 
-    const totalDeducciones = (totalHaberesConAportes + totalHaberesSinAportes) * 0.10; // Asumiendo el 20% de deducciones totales
+    const totalDeducciones = (jubilacion + ley + sindicato + personal + obrasocial + redondeo); // Asumiendo el 20% de deducciones totales
     //const totalDeduccionesNuevo = (jubilacion+ley+sindicato+personal+obrasocial+redondeo); // Asumiendo el 20% de deducciones totales
-
     const totalAPagar = totalHaberesConAportes + totalHaberesSinAportes - totalDeducciones;
+
+    /*Tipos de datos de las variables y constantes*/
+    console.log(typeof nombre);    // "string"
+    console.log(typeof antiguedad);    // "number"
+    console.log(typeof horas50);    // "number"
+    console.log(typeof horasFeriado);    // "number"
+    console.log(typeof horasNocturnas);    // "number"
+    console.log(typeof dias);    // "number"
+
+    console.log(typeof sueldo);    // "number"
+    console.log(typeof adicionalRemunerativo);    // "number"
+    console.log(typeof adicionalAntiguedad);    // "number"
+    console.log(typeof presentismo);    // "number"
+
+    console.log(typeof viaticos);    // "number"
+    console.log(typeof hsExtras50);    // "number"
+    console.log(typeof hsExtras100);    // "number"
+    console.log(typeof adNocturnidad);    // "number"
+    console.log(typeof sumaNoRemunerativa);    // "number"
+
+    console.log(typeof totalHaberesConAportes);    // "number"
+    console.log(typeof totalHaberesSinAportes);    // "number"
+
+    console.log(typeof jubilacion);    // "number"
+    console.log(typeof ley);    // "number"
+    console.log(typeof sindicato);    // "number"
+    console.log(typeof personal);    // "number"
+    console.log(typeof obrasocial);    // "number"
+    console.log(typeof redondeo);    // "number"
+
+    console.log(typeof totalDeducciones);    // "number"
+    console.log(typeof totalAPagar);    // "number"
 
     document.getElementById('result').innerHTML = `
         <h2>Detalle del Sueldo</h2>
@@ -59,7 +89,6 @@ function calcularSueldo() {
         <p><strong>TOTAL HABERES CON APORTES: $${totalHaberesConAportes.toFixed(2)}</strong></p>
         <p><strong>TOTAL HABERES SIN APORTES: $${totalHaberesSinAportes.toFixed(2)}</strong></p>
         <p><strong>TOTAL DEDUCCIONES: $${totalDeducciones.toFixed(2)}</strong></p>
-        
         <h3><strong>TOTAL A PAGAR: $${totalAPagar.toFixed(2)}</strong></h3>
     `;
 }
