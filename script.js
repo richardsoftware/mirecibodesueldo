@@ -15,7 +15,7 @@ function calcularSueldo() {
 
     let hsExtras50 = horas50 * ((sueldo + adicionalRemunerativo + adicionalAntiguedad + presentismo)* 0.0075);//variable 4468.43
     let hsExtras100 = (horasFeriado/2) * ((sueldo + adicionalRemunerativo + adicionalAntiguedad + presentismo)* 0.01);//variable 5957.90
-    let adNocturnidad = horasNocturnas * ((sueldo + adicionalRemunerativo)* 0.001);//variable 483.79
+    let adNocturnidad = horasNocturnas * ((sueldo + adicionalRemunerativo + adicionalAntiguedad )* 0.001);//variable 483.79
     const sumaNoRemunerativa = 30000.00;//30000
 
     let totalHaberesConAportes = sueldo + adicionalRemunerativo + adicionalAntiguedad + presentismo + hsExtras50 + hsExtras100 + adNocturnidad;
