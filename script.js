@@ -13,19 +13,20 @@ function calcularSueldo() {
     const viaticos = 219000.00;//219000
     let viaticoDiario = viaticos / 30 ;//219000 dividido 30
 
-    let hsExtras50 = horas50 * ((sueldo + adicionalRemunerativo + adicionalAntiguedad + presentismo)* 0.0075);//variable 4468.43
-    let hsExtras100 = (horasFeriado/2) * ((sueldo + adicionalRemunerativo + adicionalAntiguedad + presentismo)* 0.01);//variable 5957.90
-    let adNocturnidad = horasNocturnas * ((sueldo + adicionalRemunerativo + adicionalAntiguedad )* 0.001);//variable 483.79
+    let hsExtras50 = horas50 * ((sueldo + adicionalRemunerativo + adicionalAntiguedad + presentismo) * 0.0075);//variable 4827.68
+    let hsExtras100 = (horasFeriado/2) * ((sueldo + adicionalRemunerativo + adicionalAntiguedad + presentismo) * 0.01);//variable 6436.90
+    let adNocturnidad = horasNocturnas * ((sueldo + adicionalRemunerativo + adicionalAntiguedad ) * 0.001);//variable 531.69
     const sumaNoRemunerativa = 30000.00;//30000
 
     let totalHaberesConAportes = sueldo + adicionalRemunerativo + adicionalAntiguedad + presentismo + hsExtras50 + hsExtras100 + adNocturnidad;
     let totalHaberesSinAportes = sumaNoRemunerativa + viaticos;
 
+    //Calculo Deducciones
     let jubilacion = (totalHaberesConAportes * 0.11);
     let ley = (totalHaberesConAportes * 0.03);
     let sindicato = 0;
     let personal = 139.76;//66.52
-    let obrasocial = ((totalHaberesConAportes+sumaNoRemunerativa)* 0.03);
+    let obrasocial = ((totalHaberesConAportes+sumaNoRemunerativa) * 0.03);
 
     let totalDeducciones = (jubilacion + ley + sindicato + personal + obrasocial); // Descuentos
     let totalAPagar = totalHaberesConAportes + totalHaberesSinAportes - totalDeducciones;
