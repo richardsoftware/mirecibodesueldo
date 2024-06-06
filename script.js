@@ -13,8 +13,8 @@ function calcularSueldo() {
     const viaticos = 219000.00;//219000
     let viaticoDiario = viaticos / 30 ;//219000 dividido 30
 
-    let hsExtras50 = horas50 * ((sueldo + adicionalAntiguedad + presentismo)* 0.0075);//variable 4468.43
-    let hsExtras100 = (horasFeriado/2) * ((sueldo + adicionalAntiguedad + presentismo)* 0.01);//variable 5957.90
+    let hsExtras50 = horas50 * ((sueldo + + adicionalRemunerativo+ adicionalAntiguedad + presentismo)* 0.0075);//variable 4468.43
+    let hsExtras100 = (horasFeriado/2) * ((sueldo + adicionalRemunerativo + adicionalAntiguedad + presentismo)* 0.01);//variable 5957.90
     let adNocturnidad = horasNocturnas * ((sueldo + adicionalAntiguedad)* 0.001);//variable 483.79
     const sumaNoRemunerativa = 30000.00;//30000
 
