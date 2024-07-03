@@ -8,12 +8,12 @@ function calcularSueldo() {
     const adelanto = parseFloat(document.getElementById('adelanto').value);
     const dias = 30;
 
-    const sueldo = 356000; //356000
-    const adicionalRemunerativo = 123000; //123000
+    const sueldo = 603000; //356000(603000)
+    const adicionalRemunerativo = 0; //123000(0)
     let adicionalAntiguedad = ((sueldo + adicionalRemunerativo) * 0.01) * antiguedad;
-    let presentismo = 112000; //1120000
+    let presentismo = 135000; //1120000(135000)
     let descPresentismo = 0; //0
-    let viaticos = 219000;//219.000
+    let viaticos = 276000;//219.000(276000)
     let viaticoDiario = viaticos / dias;
 
     let diasTrabajados = dias - faltas; //29
@@ -23,15 +23,15 @@ function calcularSueldo() {
     if(faltas != 0){
         //se ejecuta si tiene 1 o mas faltas
         console.log("Tiene faltas");
-        presentismo = 112000;
-        descPresentismo = -112000;
+        presentismo = 135000;
+        descPresentismo = -135000;
         inasistencia = -(sueldo + adicionalRemunerativo + adicionalAntiguedad)/30; //-17723
 
         }
         else{
             //se ejecuta si faltas = 0
             console.log("No tiene faltas");
-            presentismo = 112000;
+            presentismo = 135000;
             descPresentismo = 0;
             inasistencia = 0;
         }
@@ -39,7 +39,7 @@ function calcularSueldo() {
     let hsExtras50 = horas50 * ((sueldo + adicionalRemunerativo + adicionalAntiguedad + presentismo) * 0.0075); //variable 4827.68
     let hsExtras100 = (horasFeriado / 2) * ((sueldo + adicionalRemunerativo + adicionalAntiguedad + presentismo) * 0.01); //variable 6436.90
     let adNocturnidad = horasNocturnas * ((sueldo + adicionalRemunerativo + adicionalAntiguedad) * 0.001); //variable 531.69
-    let sumaNoRemunerativa = diasTrabajados * 1000; //30000
+    let sumaNoRemunerativa = 0; //diasTrabajados * 1000; //30000
 
     let totalHaberesConAportes = sueldo + adicionalRemunerativo + adicionalAntiguedad + presentismo + descPresentismo + hsExtras50 + hsExtras100 + adNocturnidad + inasistencia;
     let totalHaberesSinAportes = sumaNoRemunerativa + viaticos;
@@ -58,7 +58,7 @@ function calcularSueldo() {
     let redondeo1 = totalRedondo - totalAPagar;
 
     document.getElementById('result').innerHTML = `
-        <h2>Detalle del Sueldo     Mes: Mayo 2024</h2>
+        <h2>Detalle del Sueldo     Mes: Julio 2024</h2>
         <p>Nombre: ${nombre}</p>
         <table>
             <tr><td>1000</td><td>Sueldo</td><td>1</td><td>$ ${sueldo.toFixed(2)}</td></tr>
