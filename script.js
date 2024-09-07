@@ -8,12 +8,12 @@ function calcularSueldo() {
     const adelanto = parseFloat(document.getElementById('adelanto').value);
     const dias = 30;
 
-    const sueldo = 603000; //356000(603000)
+    const sueldo = 620000; //(603000)
     const adicionalRemunerativo = 0; //123000(0)
     let adicionalAntiguedad = ((sueldo + adicionalRemunerativo) * 0.01) * antiguedad;
-    let presentismo = 135000; //1120000(135000)
+    let presentismo = 140000; //(135000)
     let descPresentismo = 0; //0
-    let viaticos = 276000;//219.000(276000)
+    let viaticos = 330000;//(276000)
     let viaticoDiario = viaticos / dias;
 
     let diasTrabajados = dias - faltas; //29
@@ -23,15 +23,15 @@ function calcularSueldo() {
     if(faltas != 0){
         //se ejecuta si tiene 1 o mas faltas
         console.log("Tiene faltas");
-        presentismo = 135000;
-        descPresentismo = -135000;
+        presentismo = 140000;
+        descPresentismo = -140000;
         inasistencia = -(sueldo + adicionalRemunerativo + adicionalAntiguedad)/30; //-17723
 
         }
         else{
             //se ejecuta si faltas = 0
             console.log("No tiene faltas");
-            presentismo = 135000;
+            presentismo = 140000;
             descPresentismo = 0;
             inasistencia = 0;
         }
