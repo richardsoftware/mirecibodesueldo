@@ -48,7 +48,7 @@ function calcularSueldo() {
     let jubilacion = (totalHaberesConAportes * 0.11);
     let ley = (totalHaberesConAportes * 0.03);
     let sindicato = 0;
-    let personal = 232.71; //395.88
+    let personal = 238.27; //232.71
     let obrasocial = ((totalHaberesConAportes + sumaNoRemunerativa) * 0.03);
 
 
