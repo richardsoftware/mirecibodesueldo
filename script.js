@@ -13,7 +13,7 @@ function calcularSueldo() {
     let adicionalAntiguedad = ((sueldo + adicionalRemunerativo) * 0.01) * antiguedad;
     let presentismo = 140000; //(135000)
     let descPresentismo = 0; //0
-    let viaticos = 330000;//(276000)
+    let viaticos = 385000;//(330000)
     let viaticoDiario = viaticos / dias;
 
     let diasTrabajados = dias - faltas; //29
@@ -48,7 +48,7 @@ function calcularSueldo() {
     let jubilacion = (totalHaberesConAportes * 0.11);
     let ley = (totalHaberesConAportes * 0.03);
     let sindicato = 0;
-    let personal = 238.27; //232.71
+    let personal = 437.58; //238.27
     let obrasocial = ((totalHaberesConAportes + sumaNoRemunerativa) * 0.03);
 
 
@@ -58,7 +58,7 @@ function calcularSueldo() {
     let redondeo1 = totalRedondo - totalAPagar;
 
     document.getElementById('result').innerHTML = `
-        <h2>Detalle del Sueldo     Mes: Octubre 2024 Nuevo</h2>
+        <h2>Detalle del Sueldo     Mes: Noviembre 2024 Nuevo</h2>
         <p>Nombre: ${nombre}</p>
         <table>
             <tr><td>1000</td><td>Sueldo</td><td>1</td><td>$ ${sueldo.toFixed(2)}</td></tr>
