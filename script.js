@@ -48,7 +48,7 @@ function calcularSueldo() {
     let jubilacion = (totalHaberesConAportes * 0.11);
     let ley = (totalHaberesConAportes * 0.03);
     let sindicato = 0;
-    let personal = 437.58; //238.27
+    let personal = 116.07; //238.27
     let obrasocial = ((totalHaberesConAportes + sumaNoRemunerativa) * 0.03);
 
 
@@ -58,7 +58,7 @@ function calcularSueldo() {
     let redondeo1 = totalRedondo - totalAPagar;
 
     document.getElementById('result').innerHTML = `
-        <h2>Detalle del Sueldo     Mes: Noviembre 2024 Nuevo</h2>
+        <h2>Detalle del Sueldo     Mes: Diciembre 2024 Nuevo</h2>
         <p>Nombre: ${nombre}</p>
         <table>
             <tr><td>1000</td><td>Sueldo</td><td>1</td><td>$ ${sueldo.toFixed(2)}</td></tr>
