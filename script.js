@@ -1,3 +1,4 @@
+//Actualizado 05/08/2025
 function calcularSueldo() {
     const nombre = document.getElementById('name').value;
     const antiguedad = parseFloat(document.getElementById('antiguedad').value);
@@ -8,12 +9,12 @@ function calcularSueldo() {
     const adelanto = parseFloat(document.getElementById('adelanto').value);
     const dias = 30;
 
-    const sueldo = 702225; //(685000)
-    const adicionalRemunerativo = 26280; //123000(0)
+    const sueldo = 745030; //(702225)
+    const adicionalRemunerativo = 0; //26280(0)
     let adicionalAntiguedad = ((sueldo + adicionalRemunerativo) * 0.01) * antiguedad;
-    let presentismo = 140000; //(135000)
+    let presentismo = 153600; //(140000)
     let descPresentismo = 0; //0
-    let viaticos = 403700;//(385000)
+    let viaticos = 435580;//(403700)
     let viaticoDiario = viaticos / dias;
 
     let diasTrabajados = dias - faltas; //29
@@ -23,23 +24,23 @@ function calcularSueldo() {
     if(faltas != 0){
         //se ejecuta si tiene 1 o mas faltas
         console.log("Tiene faltas");
-        presentismo = 140000;
-        descPresentismo = -140000;
+        presentismo = 153600;
+        descPresentismo = -153600;
         inasistencia = -(sueldo + adicionalRemunerativo + adicionalAntiguedad)/30; //-17723
 
         }
         else{
             //se ejecuta si faltas = 0
             console.log("No tiene faltas");
-            presentismo = 140000;
+            presentismo = 153600;
             descPresentismo = 0;
             inasistencia = 0;
         }
 
     let hsExtras50 = horas50 * ((sueldo + adicionalRemunerativo + adicionalAntiguedad + presentismo) * 0.0075); //variable 4827.68
     let hsExtras100 = (horasFeriado / 2) * ((sueldo + adicionalRemunerativo + adicionalAntiguedad + presentismo) * 0.01); //variable 6436.90
-    let adNocturnidad = horasNocturnas * ((sueldo + adicionalRemunerativo + adicionalAntiguedad) * 0.001); //variable 531.69
-    let sumaNoRemunerativa = 0; //diasTrabajados * 1000; //30000
+    let adNocturnidad = horasNocturnas * ((sueldo + adicionalRemunerativo + adicionalAntiguedad) * 0.001); //variable 834.43
+    let sumaNoRemunerativa = 25000; //diasTrabajados * 1000; //30000
 
     let totalHaberesConAportes = sueldo + adicionalRemunerativo + adicionalAntiguedad + presentismo + descPresentismo + hsExtras50 + hsExtras100 + adNocturnidad + inasistencia;
     let totalHaberesSinAportes = sumaNoRemunerativa + viaticos;
@@ -48,8 +49,8 @@ function calcularSueldo() {
     let jubilacion = (totalHaberesConAportes * 0.11);
     let ley = (totalHaberesConAportes * 0.03);
     let sindicato = 0;
-    let personal = 440.09; //116,07
-    let obrasocial = ((totalHaberesConAportes + sumaNoRemunerativa) * 0.03);
+    let personal = 284; //440,09
+    let obrasocial = ((totalHaberesConAportes + sumaNoRemunerativa) * 0.03);//sedescuenta tambien de la SNR
 
 
     let totalDeducciones = (jubilacion + ley + sindicato + personal + obrasocial + adelanto); // Descuentos
@@ -58,7 +59,7 @@ function calcularSueldo() {
     let redondeo1 = totalRedondo - totalAPagar;
 
     document.getElementById('result').innerHTML = `
-        <h2>Detalle del Sueldo     Mes: Marzo 2025 Nueva Paritaria</h2>
+        <h2>Detalle del Sueldo     Mes: Julio 2025 Nueva Paritaria</h2>
         <p>Nombre: ${nombre}</p>
         <table>
             <tr><td>1000</td><td>Sueldo</td><td>1</td><td>$ ${sueldo.toFixed(2)}</td></tr>
