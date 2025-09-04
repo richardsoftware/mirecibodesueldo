@@ -9,12 +9,12 @@ function calcularSueldo() {
     const adelanto = parseFloat(document.getElementById('adelanto').value);
     const dias = 30;
 
-    const sueldo = 745030; //(702225)
+    const sueldo = 751735; //(745030)
     const adicionalRemunerativo = 0; //26280(0)
     let adicionalAntiguedad = ((sueldo + adicionalRemunerativo) * 0.01) * antiguedad;
     let presentismo = 153600; //(140000)
     let descPresentismo = 0; //0
-    let viaticos = 435580;//(403700)
+    let viaticos = 443215;//(403700)
     let viaticoDiario = viaticos / dias;
 
     let diasTrabajados = dias - faltas; //29
@@ -40,7 +40,7 @@ function calcularSueldo() {
     let hsExtras50 = horas50 * ((sueldo + adicionalRemunerativo + adicionalAntiguedad + presentismo) * 0.0075); //variable 4827.68
     let hsExtras100 = (horasFeriado / 2) * ((sueldo + adicionalRemunerativo + adicionalAntiguedad + presentismo) * 0.01); //variable 6436.90
     let adNocturnidad = horasNocturnas * ((sueldo + adicionalRemunerativo + adicionalAntiguedad) * 0.001); //variable 834.43
-    let sumaNoRemunerativa = 25000; //diasTrabajados * 1000; //30000
+    let sumaNoRemunerativa = 50000; //diasTrabajados * 1000; //30000
 
     let totalHaberesConAportes = sueldo + adicionalRemunerativo + adicionalAntiguedad + presentismo + descPresentismo + hsExtras50 + hsExtras100 + adNocturnidad + inasistencia;
     let totalHaberesSinAportes = sumaNoRemunerativa + viaticos;
@@ -49,7 +49,7 @@ function calcularSueldo() {
     let jubilacion = (totalHaberesConAportes * 0.11);
     let ley = (totalHaberesConAportes * 0.03);
     let sindicato = 0;
-    let personal = 284; //440,09
+    let personal = 233.8; //440,09
     let obrasocial = ((totalHaberesConAportes + sumaNoRemunerativa) * 0.03);//sedescuenta tambien de la SNR
 
 
@@ -59,7 +59,7 @@ function calcularSueldo() {
     let redondeo1 = totalRedondo - totalAPagar;
 
     document.getElementById('result').innerHTML = `
-        <h2>Detalle del Sueldo     Mes: Julio 2025 Nueva Paritaria</h2>
+        <h2>Detalle del Sueldo     Mes: Agosto 2025 Nueva Paritaria</h2>
         <p>Nombre: ${nombre}</p>
         <table>
             <tr><td>1000</td><td>Sueldo</td><td>1</td><td>$ ${sueldo.toFixed(2)}</td></tr>
