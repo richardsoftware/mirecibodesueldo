@@ -1,4 +1,4 @@
-//Actualizado 06/01/2026
+//Actualizado 27/01/2026
 function calcularSueldo() {
     const nombre = document.getElementById('name').value;
     const antiguedad = parseFloat(document.getElementById('antiguedad').value);
@@ -9,12 +9,12 @@ function calcularSueldo() {
     const adelanto = parseFloat(document.getElementById('adelanto').value);
     const dias = 30;
 
-    const sueldo = 833600; //(825600)
+    const sueldo = 867200; //(833600)
     const adicionalRemunerativo = 0; //26280(0)
     let adicionalAntiguedad = ((sueldo + adicionalRemunerativo) * 0.01) * antiguedad;
-    let presentismo = 159600; //(153600)
+    let presentismo = 165000; //(159600)
     let descPresentismo = 0; //0
-    let viaticos = 473800;//(443215)
+    let viaticos = 473800;//(473800)
     let viaticoDiario = viaticos / dias;
 
     let diasTrabajados = dias - faltas; //29
@@ -24,15 +24,15 @@ function calcularSueldo() {
     if(faltas != 0){
         //se ejecuta si tiene 1 o mas faltas
         console.log("Tiene faltas");
-        presentismo = 159600;
-        descPresentismo = -159600;
+        presentismo = 165000;
+        descPresentismo = -165000;
         inasistencia = -(sueldo + adicionalRemunerativo + adicionalAntiguedad)/30; //-17723
 
         }
         else{
             //se ejecuta si faltas = 0
             console.log("No tiene faltas");
-            presentismo = 159600;
+            presentismo = 165000;
             descPresentismo = 0;
             inasistencia = 0;
         }
@@ -40,7 +40,7 @@ function calcularSueldo() {
     let hsExtras50 = horas50 * ((sueldo + adicionalRemunerativo + adicionalAntiguedad + presentismo) * 0.0075); //variable 4827.68
     let hsExtras100 = (horasFeriado / 2) * ((sueldo + adicionalRemunerativo + adicionalAntiguedad + presentismo) * 0.01); //variable 6436.90
     let adNocturnidad = horasNocturnas * ((sueldo + adicionalRemunerativo + adicionalAntiguedad) * 0.001); //variable 834.43
-    let sumaNoRemunerativa = 25000; //diasTrabajados * 1000; //30000
+    let sumaNoRemunerativa = 10000; //diasTrabajados * 1000; //30000
 
     let totalHaberesConAportes = sueldo + adicionalRemunerativo + adicionalAntiguedad + presentismo + descPresentismo + hsExtras50 + hsExtras100 + adNocturnidad + inasistencia;
     let totalHaberesSinAportes = sumaNoRemunerativa + viaticos;
@@ -49,7 +49,7 @@ function calcularSueldo() {
     let jubilacion = (totalHaberesConAportes * 0.11);
     let ley = (totalHaberesConAportes * 0.03);
     let sindicato = 0;
-    let personal = 292.86; //278,66
+    let personal = 0; //278,66 solo para Prosegur
     let obrasocial = ((totalHaberesConAportes + sumaNoRemunerativa) * 0.03);//sedescuenta tambien de la SNR
 
 
@@ -59,7 +59,7 @@ function calcularSueldo() {
     let redondeo1 = totalRedondo - totalAPagar;
 
     document.getElementById('result').innerHTML = `
-        <h2>Detalle del Sueldo  Mes: Diciembre 2025 Paritaria Anterior</h2>
+        <h2>Detalle del Sueldo  Mes: Enero 2026 Nueva Paritaria Homologada</h2>
         <p>Nombre: ${nombre}</p>
         <table>
             <tr><td>1000</td><td>Sueldo</td><td>1</td><td>$ ${sueldo.toFixed(2)}</td></tr>
