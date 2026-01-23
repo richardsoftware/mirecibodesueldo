@@ -1,41 +1,69 @@
 <!DOCTYPE html>
-<!-- Actualizado 06/01/2025 -->
+<!-- Actualizado 27/01/2025 -->
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cálculo de Sueldo</title>
+    <title>Calculadora de Sueldo</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <h1>Cálculo de Sueldo del Trabajador</h1>
-        <form id="salaryForm">
-            <label for="name">Nombre y Apellido:</label>
-            <input type="text" id="name" required>
 
-            <label for="antiguedad">Antigüedad (años):</label>
-            <input type="number" id="antiguedad" value="0" required>
-
-            <label for="horas50">Horas Extras al 50%:</label>
-            <input type="number" id="horas50" value="0" required>
-
-            <label for="horasFeriado">Horas Feriado:</label>
-            <input type="number" id="horasFeriado" value="0" required>
-
-            <label for="horasNocturnas">Horas Nocturnas:</label>
-            <input type="number" id="horasNocturnas" value="0" required>
-
-            <label for="horasNocturnas">Faltas:</label>
-            <input type="number" id="faltas" value="0" required>
-
-            <label for="horasNocturnas">Adelanto:</label>
-            <input type="number" id="adelanto" value="0" required>
-
-            <button type="button" onclick="calcularSueldo()">Calcular</button>
-        </form>
-        <div id="result"></div>
+<header class="app-header">
+    <div class="header-inner">
+        <div class="brand">
+            <div class="logo-badge">
+                <img src="img/logo-calculadora.png" alt="Calculadora de Sueldo">
+            </div>
+            <div class="brand-text">
+                <span class="app-title">Calculadora de Sueldo</span>
+                <span class="app-subtitle">Recibo de Haberes</span>
+            </div>
+        </div>
     </div>
-    <script src="script.js"></script>
+</header>
+
+<main class="container">
+
+    <section class="card">
+        <h1>Datos del Vigilador</h1>
+        <form id="salaryForm" class="grid-form">
+
+            <label>Nombre</label>
+            <input type="text" id="name" placeholder="Juan Pérez">
+
+            <label>Antigüedad (años)</label>
+            <input type="number" id="antiguedad" value="0" min="0">
+
+            <label>Horas 50%</label>
+            <input type="number" id="horas50" value="0" min="0">
+
+            <label>Horas feriado</label>
+            <input type="number" id="horasFeriado" value="0" min="0">
+
+            <label>Horas nocturnas</label>
+            <input type="number" id="horasNocturnas" value="0" min="0">
+
+            <label>Faltas (días)</label>
+            <input type="number" id="faltas" value="0" min="0">
+
+            <label>Adelanto</label>
+            <input type="number" id="adelanto" value="0" min="0">
+
+            <div class="actions">
+                <button type="button" id="calculateBtn" class="btn-primary">Calcular</button>
+                <button type="reset" class="btn-secondary">Limpiar</button>
+            </div>
+        </form>
+    </section>
+
+    <section id="result" class="card result"></section>
+
+</main>
+
+<footer class="footer">Uso interno · 2026</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
