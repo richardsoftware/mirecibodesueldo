@@ -1,78 +1,91 @@
 <!DOCTYPE html>
-<!-- Actualizado 04/02/2025 -->
+<!-- Actualizado 05/02/2026  TURISMO -->
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora de Sueldo</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STVP – Turismo y Beneficios</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="styles2.css">
 </head>
 
-<a href="https://wa.me/5491165756000?text=Hola%20quiero%20consultar%20sobre%20la%20calculadora%20de%20sueldo"
-    class="whatsapp-float"
-    target="_blank"
-    aria-label="WhatsApp contacto">
-    <i class="fa-brands fa-whatsapp"></i>
-    <span>Contacto</span>
-</a>
+<script>
+  let slides = document.querySelectorAll(".slide");
+  let index = 0;
+
+  setInterval(() => {
+    slides[index].classList.remove("active");
+    index = (index + 1) % slides.length;
+    slides[index].classList.add("active");
+  }, 4000);
+</script>
+
 <body>
 
-<header class="app-header">
-    <div class="header-inner">
-        <div class="brand">
-            <div class="logo-badge">
-                <img src="img/logo-calculadora.png" alt="Calculadora de Sueldo">
-            </div>
-            <div class="brand-text">
-                <span class="app-title">Calculadora de Sueldo</span>
-                <span class="app-subtitle">Recibo de Haberes</span>
-            </div>
-        </div>
-    </div>
+<header class="header">
+  <img src="img/logo_stvp.jpeg" class="logo" alt="STVP">
+  <h1>Turismo para Afiliados</h1>
+  <p>Beneficios exclusivos del Sindicato</p>
 </header>
 
-<main class="container">
+<section class="hero slider">
+  <img src="img/image-MDQ.png" class="slide active">
+  <img src="img/Flyer.jpeg" class="slide">
+</section>
 
-    <section class="card">
-        <h1>Datos del Vigilador</h1>
-        <form id="salaryForm" class="grid-form">
 
-            <label>Nombre</label>
-            <input type="text" id="name" placeholder="Juan Pérez">
+<section class="hero">
+  <div class="hero-text">
+    <h2>¡Viajes pensados para vos!</h2>
+    <p>Promociones especiales para afiliados STVP</p>
+  </div>
+</section>
 
-            <label>Antigüedad (años)</label>
-            <input type="number" id="antiguedad" value="0" min="0">
+<section class="promos">
+  <h2>Promociones destacadas</h2>
 
-            <label>Horas 50%</label>
-            <input type="number" id="horas50" value="0" min="0">
+  <div class="card">
+    <img src="img/BAR.jpeg" alt="Mar del Plata">
+    <h3>Bariloche Aéreo</h3>
+    <p>4 días / 3 noches<br>Media Pensión</p>
+    <span class="price">$479.990</span>
+  </div>
 
-            <label>Horas feriado</label>
-            <input type="number" id="horasFeriado" value="0" min="0">
+  <div class="card">
+    <img src="img/MDQ.jpeg" alt="Mar del Plata">
+    <h3>Mar del Plata – Carnaval</h3>
+    <p>4 días / 3 noches<br>Pensión completa</p>
+    <span class="price">$199.990</span>
+  </div>
+</section>
 
-            <label>Horas nocturnas</label>
-            <input type="number" id="horasNocturnas" value="0" min="0">
+<section class="video">
+  <h2>Conocé todos los beneficios</h2>
+  <video controls>
+    <source src="img/Beneficios_Turismo.mp4" type="video/mp4">
+    Tu navegador no soporta video
+  </video>
+</section>
 
-            <label>Faltas (días)</label>
-            <input type="number" id="faltas" value="0" min="0">
+<section class="calculator">
+  <a href="calculadora.html" class="btn-calculadora">
+    <i class="fa-solid fa-calculator"></i>
+    Calcular mi sueldo
+  </a>
+</section>
 
-            <label>Adelanto</label>
-            <input type="number" id="adelanto" value="0" min="0">
+<footer class="footer">
+      <p>📧 stvpturismo@gmail.com</p>
+</footer>
 
-            <div class="actions">
-                <button type="button" id="calculateBtn" class="btn-primary">Calcular</button>
-                <button type="reset" class="btn-secondary">Limpiar</button>
-            </div>
-        </form>
-    </section>
+<!-- WHATSAPP SOLO MÓVIL -->
+<a href="https://wa.me/5491165756000?text=Hola%20quiero%20consultar%20por%20los%20viajes%20del%20STVP"
+   class="whatsapp-float"
+   target="_blank">
+  <i class="fa-brands fa-whatsapp"></i>
+  <span>Contacto</span>
+</a>
 
-    <section id="result" class="card result"></section>
-
-</main>
-
-<footer class="footer">Uso interno · Richardsoftware 2026</footer>
-
-<script src="script.js"></script>
 </body>
 </html>

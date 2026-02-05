@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!-- Actualizado 04/02/2025 -->
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Sueldo</title>
+    <link rel="stylesheet" href="stylescalculadora.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<a href="https://wa.me/5491165756000?text=Hola%20quiero%20consultar%20sobre%20la%20calculadora%20de%20sueldo"
+    class="whatsapp-float"
+    target="_blank"
+    aria-label="WhatsApp contacto">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span>Consultas</span>
+</a>
+<body>
+
+<header class="app-header">
+    <div class="header-inner">
+        <div class="brand">
+            <div class="logo-badge">
+                <img src="img/logo-calculadora.png" alt="Calculadora de Sueldo">
+            </div>
+            <div class="brand-text">
+                <span class="app-title">Calculadora de Sueldo</span>
+                <span class="app-subtitle">Recibo de Haberes</span>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main class="container">
+
+    <section class="card">
+        <h1>Datos del Vigilador</h1>
+        <form id="salaryForm" class="grid-form">
+
+            <label>Nombre</label>
+            <input type="text" id="name" placeholder="Juan Pérez">
+
+            <label>Antigüedad (años)</label>
+            <input type="number" id="antiguedad" value="0" min="0">
+
+            <label>Horas 50%</label>
+            <input type="number" id="horas50" value="0" min="0">
+
+            <label>Horas feriado</label>
+            <input type="number" id="horasFeriado" value="0" min="0">
+
+            <label>Horas nocturnas</label>
+            <input type="number" id="horasNocturnas" value="0" min="0">
+
+            <label>Faltas (días)</label>
+            <input type="number" id="faltas" value="0" min="0">
+
+            <label>Adelanto</label>
+            <input type="number" id="adelanto" value="0" min="0">
+
+            <div class="actions">
+                <button type="button" id="calculateBtn" class="btn-primary">Calcular</button>
+                <button type="reset" class="btn-secondary">Limpiar</button>
+            </div>
+        </form>
+    </section>
+
+    <section id="result" class="card result"></section>
+
+</main>
+
+<footer class="footer">Uso interno · Richardsoftware 2026</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
