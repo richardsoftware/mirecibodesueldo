@@ -6,15 +6,21 @@ body {
 }
 
 .header {
-  background: linear-gradient(135deg, #0077b6, #00b4d8);
-  color: white;
-  text-align: center;
-  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* 🔹 todo a la izquierda */
+  gap: 12px;
+  padding: 12px 16px;
+}
+
+.header-text {
+  text-align: left;
 }
 
 .logo {
-  width: 90px;
-  margin-bottom: 10px;
+  width: 70px;
+  height: auto;
+  display: block;
 }
 
 .hero img {
@@ -188,3 +194,39 @@ video {
     display: block;
   }
 }
+
+@media (max-width: 768px) {
+
+  .header {
+    padding: 12px 15px;   /* menos alto el header */
+  }
+
+
+
+
+
+
+
+
+  .logo {
+    width: 55px;
+  }
+
+  .header h1 {
+    font-size: 18px;
+    margin: 0;
+  }
+
+  .header p {
+    font-size: 13px;
+    margin: 0;
+  }
+}
+
+
+
+
+
+}
+
+
